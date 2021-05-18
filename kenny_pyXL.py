@@ -13,6 +13,7 @@ pascual = 'PRODUCTOS ALIMENTICIOS PANAMA'
 estrella_azul = 'MPOS INDUSTRIAS LACTEA'
 varela = 'VARELA'
 kenny = 'KENNY'
+julissa = 'JULISSA'
 
 # Create three dictionaries for cleaning
 def clean_lists():
