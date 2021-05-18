@@ -12,8 +12,7 @@ felipe = 'FELIPE MOTTA'
 pascual = 'PRODUCTOS ALIMENTICIOS PANAMA'
 estrella_azul = 'MPOS INDUSTRIAS LACTEA'
 varela = 'VARELA'
-kenny = 'KENNY SU'
-julissa = 'J'
+cochez = 'COCHEZ'
 
 
 # Create three dictionaries for cleaning
@@ -73,7 +72,7 @@ def workbook_results(name):
 
 # Function that returns true or false whether the entity is for work or not
 def isWork(myString):
-  if felipe in str(myString) or pascual in str(myString) or estrella_azul in str(myString) or varela in str(myString) or feduro in str(myString):
+  if felipe in str(myString) or pascual in str(myString) or estrella_azul in str(myString) or varela in str(myString) or feduro in str(myString) or cochez in str(myString):
     return True
   else:
     return False
@@ -129,15 +128,15 @@ def entire_process(wrkbk):
 
 def main():
   # Subtitute the workbook name to apply to the rest of the code
-  myWorkbook = 'files/dad_credit_card.xlsx'
+  myWorkbook = 'files/all_credit_card.xlsx'
   entire_process(myWorkbook)
   create_workbook()
-  workbook_results(['Dad'])
-  myWorkbook = 'files/kenny_credit_card.xlsx'
-  clean_lists()
-  entire_process(myWorkbook)
-  workbook_results(['Kenny'])
-  sum_of_totals('files/results.xlsx')
+  workbook_results(['All'])
+  # myWorkbook = 'files/kenny_credit_card.xlsx'
+  # clean_lists()
+  # entire_process(myWorkbook)
+  # workbook_results(['Kenny'])
+  # sum_of_totals('files/results.xlsx')
 
 if __name__ == "__main__":
     main()
