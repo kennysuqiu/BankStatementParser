@@ -14,6 +14,39 @@ estrella_azul = 'MPOS INDUSTRIAS LACTEA'
 varela = 'VARELA'
 cochez = 'COCHEZ'
 
+class Person:
+  def __init__(self, name, amount_work, expense, card):
+    self.name = name
+    self.amount_work = amount_work
+    self.expense = expense
+    self.card = card
+  
+  def get_name(self):
+    return self.name
+  
+  def get_amount_work(self):
+    return self.amount_work
+  
+  def get_expense(self):
+    return self.expense
+
+  def get_card(self):
+    return self.card
+  
+  def set_name(self, nm):
+    self.name = nm
+  
+  def add_amount_work(self, amt):
+    self.amount_work += amt
+
+  def add_expense(self, exp):
+    self.expense += exp
+
+  # def append_to_work_list():
+
+      
+dad = Person('Dad', 0, 0, '**** 3410')
+kenny = Person('Kenny', 0, 0, '**** 4282')
 
 # Create three dictionaries for cleaning
 def clean_lists():
@@ -32,12 +65,19 @@ def calculate_total(myList):
 
 # Function to clean the workbook, only obtaining the entity and amount paid
 def clean_workbook(wrkbk):
+  end = get_trans_qty(wrkbk)
   # load workbook and get the active sheet
   wb = load_workbook(wrkbk)
   ws = wb.active
   # Delete the innecessary columns
   if str(ws['B1'].value) != 'cleared':
-    ws.delete_cols(1,4)
+    index = 8
+    while index < end:
+      ws.unmerge_cells(start_row=index, start_column=6, end_row=index, end_column=8)
+      index += 1
+    ws.delete_cols(1,2)
+    ws.delete_cols(2)
+    ws.delete_cols(2)
     ws.delete_cols(3,4)
   ws['B1'] = 'cleared'
   wb.save(wrkbk)
@@ -131,7 +171,7 @@ def main():
   myWorkbook = 'files/all_credit_card.xlsx'
   entire_process(myWorkbook)
   create_workbook()
-  workbook_results(['All'])
+  # workbook_results(['All'])
   # myWorkbook = 'files/kenny_credit_card.xlsx'
   # clean_lists()
   # entire_process(myWorkbook)
