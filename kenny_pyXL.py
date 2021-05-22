@@ -13,6 +13,7 @@ pascual = 'PRODUCTOS ALIMENTICIOS PANAMA'
 estrella_azul = 'MPOS INDUSTRIAS LACTEA'
 varela = 'VARELA'
 cochez = 'COCHEZ'
+canon = 'CANON'
 
 
 # Create three dictionaries for cleaning
@@ -72,7 +73,7 @@ def workbook_results(name):
 
 # Function that returns true or false whether the entity is for work or not
 def isWork(myString):
-  if felipe in str(myString) or pascual in str(myString) or estrella_azul in str(myString) or varela in str(myString) or feduro in str(myString) or cochez in str(myString):
+  if felipe in str(myString) or pascual in str(myString) or estrella_azul in str(myString) or varela in str(myString) or feduro in str(myString) or cochez in str(myString) or canon in str(myString):
     return True
   else:
     return False
